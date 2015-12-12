@@ -1,9 +1,33 @@
-/*
-Car
-======= 補充方法 ======
+class Car {
+  float x ; 
+  float y ; 
+  float speed ; 
+  PImage img ;  
+  
+  Car (float x , float y ){
+    img = loadImage("car.png") ;
+    this.x = x ; 
+    this.y = y ;
+    speed = 10 ; 
+  }
 
-建構式  (x , y , speed):
-  指定車子的 x , y , speed 值
-  初始化 im  g 屬性為車子圖片
+  Car (float x , float y , float speed){
+    img = loadImage("car.png") ;
+    this.x = x ; 
+    this.y = y ;
+    this.speed = speed ;   
+  }
+ 
+  
+  void reset (){
+    x = -img.width ; 
+  }
 
-*/
+  void display (){
+    image (img,x,y);
+  }
+  
+  void moveForward (){
+    x += speed ; 
+  }
+}

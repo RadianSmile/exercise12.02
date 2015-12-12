@@ -1,3 +1,4 @@
+// chicken 可以直接給他們
 class Chicken {
   float x ; 
   float y ;
@@ -10,14 +11,12 @@ class Chicken {
 
   }
   void reset(){
-    x = width / 2  ;  // 這裏指的是 整個遊戲的 width
+    x = width / 2  ; 
     y = 0 ; 
   }
   void display (){
     image(img,x,y);
   }
-  
-  
   void moveUp (){
     y-= speed ;
   }

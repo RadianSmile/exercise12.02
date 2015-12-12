@@ -1,25 +1,24 @@
-/*
-Car
-======= 屬性 ======
-的要有 x , y , speed , img 等屬性
+class Car {
+  float x ; 
+  float y ; 
+  float speed ; 
+  PImage img ;  
+  
+  Car (float x , float y ){
+    img = loadImage("car.png") ;   
+    speed = 10 ; 
+  }
+  
+  void reset (){
+    x = -img.width ;
+    y = (int) random (height- img.height) ;
+  }
 
-======= 方法 ======
-建構式  : 參數(x , y )
-  指定車子的 x , y 值
-  初始化 speed 速度為 10
-  初始化 im  g 屬性為車子圖片
-
-建構式   : 參數(x , y , speed)
-  指定車子的 x , y , speed 值
-  初始化 im  g 屬性為車子圖片
-
-reset   :
-  將車子的位置移到出發點 (隱藏於螢幕左側，y 軸位置隨機)
-
-display :
-  顯示車子在畫布上
-
-moveForward :
-  車子的位置會往水平方向增加
-
-*/
+  void display (){
+    image (img,x,y);
+  }
+  
+  void moveForward (){
+    x += speed ; 
+  }
+}
